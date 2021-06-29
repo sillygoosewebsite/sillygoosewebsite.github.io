@@ -1,70 +1,85 @@
-// Get the GitHub username input form
-const gitHubForm = document.getElementById('gitHubForm');
+/*Simple Movie quoter app with tweet quote function for Free Code Camp* Using Bootstrap and Jquery*/
 
-// Listen for submissions on GitHub username input form
-gitHubForm.addEventListener('submit', (e) => {
-    
-    // Prevent default form submission action
-    e.preventDefault();
+$(document).ready(function() {
 
-    // Get the GitHub username input field on the DOM
-    let usernameInput = document.getElementById('usernameInput');
+  //Array with selected quotes and films
+  var quoteArray = [{
+    quote: "Frankly, my dear, I don't give a damn.",
+    film: "Gone With the Wind"
+  }, {
+    quote: "I'm going to make him an offer he can't refuse.",
+    film: "The Godfather"
+  }, {
+    quote: "May the Force be with you.",
+    film: "Star Wars"
+  }, {
+    quote: "You talking to me?",
+    film: "Taxi Driver"
+  }, {
+    quote: "You're gonna need a bigger boat.",
+    film: "Jaws"
+  }, {
+    quote: "There's no place like home",
+    film: "The Wizard of Oz"
+  }, {
+    quote: "Show me the money!",
+    film: "Jerry Maguire"
+  }, {
+    quote: "I'm walking here! I'm walking here!",
+    film: "Midnight Cowboy"
+  }, {
+    quote: "Houston, we have a problem.",
+    film: "Apollo 13"
+  }, {
+    quote: "Well, nobody's perfect.",
+    film: "Some Like It Hot"
+  }, {
+    quote: "Say “hello” to my little friend!",
+    film: "Scarface"
+  }, {
+    quote: "Bond. James Bond.",
+    film: "Dr. No"
+  }, {
+    quote: "You can't handle the truth!",
+    film: "	A Few Good Men"
+  }, {
+    quote: "I'll have what she's having.",
+    film: "When Harry Met Sally"
+  }, {
+    quote: "I see dead people.",
+    film: "The Sixth Sense"
+  }, {
+    quote: "Keep your friends close, but your enemies closer.",
+    film: "The Godfather II"
+  }, {
+    quote: "Here's Johnny!",
+    film: "The Shining"
+  }, {
+    quote: "Hasta la vista, baby.",
+    film: "Terminator 2: Judgment Day"
+  }];
 
-    // Get the value of the GitHub username input field
-    let gitHubUsername = usernameInput.value;          
+  //declare variables 
+  var randomMovieQuote = "";
+  var randomFilmName = "";
 
-    // Run GitHub API function, passing in the GitHub username
-    requestUserRepos(gitHubUsername);
+  //tweet current quote and film
+  function tweet() {
+    window.open("https://twitter.com/intent/tweet?text= " + randomMovieQuote + " - " + randomFilmName);
+  }
 
-})
+  /*function to obtain a random quote and display in html*/
+  function randomQuote() {
+    random = Math.floor(Math.random() * quoteArray.length);
+    randomMovieQuote = quoteArray[random].quote;
+    randomFilmName = quoteArray[random].film;
+    $("#message").html(randomMovieQuote);
+    $("#title").html(randomFilmName);
+  }
 
+  //Event listeners
+  $("#getMessage").on("click", randomQuote);
+  $("#tweet").on("click", tweet);
 
-function requestUserRepos(username){
-    
-    // Create new XMLHttpRequest object
-    const xhr = new XMLHttpRequest();
-    
-    // GitHub endpoint, dynamically passing in specified username
-    const url = `https://api.github.com/users/${username}/repos`;
-   
-    // Open a new connection, using a GET request via URL endpoint
-    // Providing 3 arguments (GET/POST, The URL, Async True/False)
-    xhr.open('GET', url, true);
-    
-    // When request is received
-    // Process it here
-    xhr.onload = function () {
-    
-        // Parse API data into JSON
-        const data = JSON.parse(this.response);
-        
-        // Loop over each object in data array
-        for (let i in data) {
-
-            // Get the ul with id of of userRepos
-            let ul = document.getElementById('userRepos');
-    
-            // Create variable that will create li's to be added to ul
-            let li = document.createElement('li');
-            
-            // Add Bootstrap list item class to each li
-            li.classList.add('list-group-item')
-        
-            // Create the html markup for each li
-            li.innerHTML = (`
-                <p><strong>Repo:</strong> ${data[i].name}</p>
-                <p><strong>Description:</strong> ${data[i].description}</p>
-                <p><strong>URL:</strong> <a href="${data[i].html_url}">${data[i].html_url}</a></p>
-            `);
-            
-            // Append each li to the ul
-            ul.appendChild(li);
-        
-        }
-
-    }
-    
-    // Send the request to the server
-    xhr.send();
-    
-}
+  randomQuote();
+});
