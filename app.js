@@ -1,65 +1,30 @@
-//JavaScript Page
-
-
-/*Simple Movie quoter app with tweet quote function for Free Code Camp* Using Bootstrap and Jquery*/
-
 $(document).ready(function() {
 
   //Array with selected quotes and films
   var quoteArray = [{
-    quote: "Frankly, my dear, I don't give a damn.",
-    film: "Gone With the Wind"
+    quote: "Kiss Me",
+    film: "placeholder"
   }, {
-    quote: "I'm going to make him an offer he can't refuse.",
-    film: "The Godfather"
+    quote: "My Summer of Love",
+    film: "placeholder"
   }, {
-    quote: "May the Force be with you.",
-    film: "Star Wars"
+    quote: "Summer Time",
+    film: "placeholder"
   }, {
-    quote: "You talking to me?",
-    film: "Taxi Driver"
+    quote: "Rafiki",
+    film: "placeholder"
   }, {
-    quote: "You're gonna need a bigger boat.",
-    film: "Jaws"
+    quote: "Imagine Me and You",
+    film: "placeholder"
   }, {
-    quote: "There's no place like home",
-    film: "The Wizard of Oz"
+    quote: "Consequences",
+    film: "placeholder"
   }, {
-    quote: "Show me the money!",
-    film: "Jerry Maguire"
+    quote: "I Can't Think Straight",
+    film: "placeholder"
   }, {
-    quote: "I'm walking here! I'm walking here!",
-    film: "Midnight Cowboy"
-  }, {
-    quote: "Houston, we have a problem.",
-    film: "Apollo 13"
-  }, {
-    quote: "Well, nobody's perfect.",
-    film: "Some Like It Hot"
-  }, {
-    quote: "Say “hello” to my little friend!",
-    film: "Scarface"
-  }, {
-    quote: "Bond. James Bond.",
-    film: "Dr. No"
-  }, {
-    quote: "You can't handle the truth!",
-    film: "	A Few Good Men"
-  }, {
-    quote: "I'll have what she's having.",
-    film: "When Harry Met Sally"
-  }, {
-    quote: "I see dead people.",
-    film: "The Sixth Sense"
-  }, {
-    quote: "Keep your friends close, but your enemies closer.",
-    film: "The Godfather II"
-  }, {
-    quote: "Here's Johnny!",
-    film: "The Shining"
-  }, {
-    quote: "Hasta la vista, baby.",
-    film: "Terminator 2: Judgment Day"
+    quote: "D.E.B.S",
+    film: "placeholder"
   }];
 
   //declare variables 
