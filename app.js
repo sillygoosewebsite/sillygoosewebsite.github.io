@@ -2,29 +2,29 @@ $(document).ready(function() {
 
   //Array with selected quotes and films
   var quoteArray = [{
-    film: "Kiss Me",
-    quote: "placeholder"
+    quote: "Kiss Me",
+    film: "Kiss Me"
   }, {
-    film: "My Summer of Love",
-    quote: "placeholder"
+    quote: "My Summer of Love",
+    film: "My Summer of Love"
   }, {
-    film: "Summer Time",
-    quote: "placeholder"
+    quote: "Summer Time",
+    film: "Summer Time"
   }, {
-    film: "Rafiki",
-    quote: "placeholder"
+    quote: "Rafiki",
+    film: "Rafiki"
   }, {
-    film: "Imagine Me and You",
-    quote: "placeholder"
+    quote: "Imagine Me and You",
+    film: "Imagine Me and You"
   }, {
-    film: "Consequences",
-    quote: "placeholder"
+    quote: "Consequences",
+    film: "Consequences"
   }, {
-    film: "I Can't Think Straight",
-    quote: "placeholder"
+    quote: "I Can't Think Straight",
+    film: "I Can't Think Straight"
   }, {
-    film: "D.E.B.S",
-    quote: "placeholder"
+    quote: "D.E.B.S",
+    film: "D.E.B.S"
   }];
 
   //declare variables 
